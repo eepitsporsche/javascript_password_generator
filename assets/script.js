@@ -29,13 +29,32 @@ function generatePassword() {
       var useUppercase = confirm("Press 'Okay' to include uppercase characters or 'Cancel' to omit.");
       }
   
-
-      //If user does not select any character types
+      if (useNumericCharacters) {
+        passwordCharacters += numericCharacters
+      }
+      if (useSpecialCharacters) {
+        passwordCharacters += specialCharacters
+      }
+      if (useLowercase) {
+        passwordCharacters += lowercase
+      }
+      if (useUppercase) {
+        passwordCharacters += uppercase
+      }
+  
+  
+  //If user does not select any character types
     if (useNumericCharacters === false && useSpecialCharacters === false && useLowercase === false && useUppercase === false) {
       alert("Please choose at least one character type.")
       return
     }
-
+  
+  
+  //for loop generates a random password once all criteria are met
+    for (var i = 0; i < userInput; i++) {
+      newPassword += passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+      }
+      return(newPassword)
     }
   
   
