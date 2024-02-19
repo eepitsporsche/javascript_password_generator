@@ -19,6 +19,22 @@ function generatePassword() {
       alert("Please choose a number from 8 to 128.");
       return
     }
+  
+  
+  //Prompts to verify character types
+    else {
+      var useNumericCharacters = confirm("Press 'Okay' to include numeric characters or 'Cancel' to omit.");
+      var useSpecialCharacters = confirm("Press 'Okay' to include special characters or 'Cancel' to omit.");
+      var useLowercase = confirm("Press 'Okay' to include lowercase characters or 'Cancel' to omit.");
+      var useUppercase = confirm("Press 'Okay' to include uppercase characters or 'Cancel' to omit.");
+      }
+  
+
+      //If user does not select any character types
+    if (useNumericCharacters === false && useSpecialCharacters === false && useLowercase === false && useUppercase === false) {
+      alert("Please choose at least one character type.")
+      return
+    }
 
     }
   
