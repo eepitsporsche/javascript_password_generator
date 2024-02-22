@@ -18,6 +18,7 @@ function generatePassword() {
 //If user input is not a number 8-128
   if (isNaN(userInput) || userInput < 8 || userInput > 128){
     alert("Password length must be a number from 8 to 128. Please try again.");
+    passwordText.value = " "
     return
   }
 
@@ -46,7 +47,8 @@ function generatePassword() {
 
 //If user does not select any character types
   if (useNumericCharacters === false && useSpecialCharacters === false && useLowercase === false && useUppercase === false) {
-    alert("Password must contain at least one character type. Please try again.")
+    alert("Password must contain at least one character type. Please try again.");
+    passwordText.value = " "
     return
   }
 
